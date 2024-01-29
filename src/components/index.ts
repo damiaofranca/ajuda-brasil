@@ -11,3 +11,4 @@ export * from "./ListBox";
 export * from "./TrashIcon";
 export * from "./FlexVertical";
 export * from "./FlexHorizontal";
+export * from "./AlertsCloseToYou";

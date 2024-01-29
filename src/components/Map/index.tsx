@@ -1,13 +1,17 @@
-import React from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Status, Wrapper } from "@googlemaps/react-wrapper";
 import { useFetchAlerts } from "../../hooks";
 import { contentInfoWindow } from "../../utils/contentInfoWindow";
 
-const Map: React.FC = () => {
-	const { alerts } = useFetchAlerts();
-	const [map, setMap] = React.useState<google.maps.Map | null>(null);
+export interface IMap {
+	alert: { lat: number; lng: number } | null;
+}
 
-	React.useEffect(() => {
+const Map: FC<IMap> = ({ alert }) => {
+	const { alerts } = useFetchAlerts();
+	const [map, setMap] = useState<google.maps.Map | null>(null);
+
+	useEffect(() => {
 		if (map && alerts.length) {
 			alerts.map((alert) => {
 				const infoWindow = new google.maps.InfoWindow({
@@ -30,16 +34,16 @@ const Map: React.FC = () => {
 		}
 	}, [alerts, map]);
 
-	React.useEffect(() => {
+	useEffect(() => {
 		const _map = new window.google.maps.Map(document.getElementById("map")!, {
 			zoom: 12,
-			mapTypeId: "terrain",
+			mapTypeId: "satellite",
 			streetViewControl: false,
-			center: { lat: -6.2091486, lng: -38.4988093 },
+			center: alert ? alert : { lat: -6.2091486, lng: -38.4988093 },
 		});
 
 		setMap(_map);
-	}, []);
+	}, [alert]);
 
 	return (
 		<div style={{ width: "100%", height: "100%" }}>
@@ -56,7 +60,7 @@ const Map: React.FC = () => {
 	);
 };
 
-export const MapHelperLocations: React.FC = () => {
+export const MapHelperLocations: FC<IMap> = ({ alert }) => {
 	const apiKey = process.env.REACT_APP_GOOGLE_API || "";
 
 	const renderMap = (status: Status) => {
@@ -68,7 +72,7 @@ export const MapHelperLocations: React.FC = () => {
 				return <div>Erro</div>;
 
 			case Status.SUCCESS:
-				return <Map />;
+				return <Map alert={alert} />;
 		}
 	};
 

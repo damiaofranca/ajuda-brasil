@@ -53,3 +53,21 @@
   font-family: "Open Sans";
   color      : #828282;
 }
+
+
+
+body::-webkit-scrollbar-track
+{
+	background-color: #e0e0e0;
+}
+
+body::-webkit-scrollbar
+{
+	width: 2px;
+	background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	background-color: #0070f0;
+}

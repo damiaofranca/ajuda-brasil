@@ -1,4 +1,12 @@
 import { FC, useState } from "react";
+
+import {
+	AlertsCloseToYou,
+	CreateAlertModal,
+	MapHelperLocations,
+} from "../../../components";
+import PlusIcon from "../../../assets/icons/plus.svg";
+
 import {
 	Title,
 	Header,
@@ -8,17 +16,22 @@ import {
 	ContainerMap,
 	ContainerAlerts,
 } from "./styles";
-import PlusIcon from "../../../assets/icons/plus.svg";
-import { CreateAlertModal, MapHelperLocations } from "../../../components";
 
 interface IInitialPage {}
 
 export const InitialPage: FC<IInitialPage> = () => {
 	const [showModalAlert, setShowModalAlert] = useState<boolean>(false);
+	const [selectedAlert, setSelectedAlert] = useState<{
+		lat: number;
+		lng: number;
+	} | null>(null);
 
 	const onShowModalRegister = () => setShowModalAlert(true);
 
 	const onCloseModalRegister = () => setShowModalAlert(false);
+
+	const onSelectAlert = (alert: { lat: number; lng: number }) =>
+		setSelectedAlert(alert);
 
 	return (
 		<Container>
@@ -35,9 +48,11 @@ export const InitialPage: FC<IInitialPage> = () => {
 			</Header>
 			<Content>
 				<ContainerMap>
-					<MapHelperLocations />
+					<MapHelperLocations alert={selectedAlert} />
 				</ContainerMap>
-				<ContainerAlerts></ContainerAlerts>
+				<ContainerAlerts className="bg-content3">
+					<AlertsCloseToYou onSelectDetail={(e) => onSelectAlert(e)} />
+				</ContainerAlerts>
 			</Content>
 			{showModalAlert ? (
 				<CreateAlertModal onCloseFn={onCloseModalRegister} />

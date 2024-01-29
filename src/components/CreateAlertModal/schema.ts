@@ -6,5 +6,6 @@ export const RegisterAlertSchema = Yup.object().shape({
 		.min(3, "Necessário ao menos 3 letras."),
 	description: Yup.string()
 		.required("Campo obrigatório")
-		.min(5, "Necessário ao menos 5 letras."),
+		.min(5, "Necessário ao menos 5 letras.")
+		.max(160, "Maximo limite atingido."),
 });

@@ -24,10 +24,10 @@ module.exports = {
 							DEFAULT: "#394240",
 						},
 						content3: {
-							DEFAULT: "#FFFFFF",
+							DEFAULT: "#365486",
 						},
 						content4: {
-							DEFAULT: "#EF5350",
+							DEFAULT: "#0070f0",
 						},
 						foreground: {
 							DEFAULT: "#394240",

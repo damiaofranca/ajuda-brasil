@@ -13,6 +13,19 @@ export const Header = styled.div`
 	align-items: center;
 	margin-bottom: 16px;
 	justify-content: space-between;
+
+	@media screen and (max-width: 560px) {
+		margin-bottom: 26px;
+		flex-direction: column;
+		align-items: flex-start;
+
+		& > h1 {
+			margin: 0 0 6px 0;
+		}
+		& > button {
+			margin: 0;
+		}
+	}
 `;
 
 export const Title = styled.h1`
@@ -30,7 +43,8 @@ export const AddAlert = styled(Button)`
 export const ContainerMap = styled.div``;
 
 export const ContainerAlerts = styled.div`
-	background-color: blue;
+	padding: 20px 18px;
+	border-radius: 10px;
 `;
 
 export const Content = styled.div`

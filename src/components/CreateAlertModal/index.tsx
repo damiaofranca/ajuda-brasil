@@ -1,6 +1,5 @@
 import {
 	Modal,
-	ModalContent,
 	ModalHeader,
 	ModalBody,
 	ModalFooter,
@@ -13,7 +12,7 @@ import { toast } from "react-toastify";
 import { useFormik } from "formik";
 import { RegisterAlertSchema } from "./schema";
 import { FlexVertical } from "../FlexVertical";
-import { FormItem } from "./styles";
+import { FormItem, ModalContent } from "./styles";
 
 interface ICreateAlertModal {
 	onCloseFn: () => void;
@@ -81,9 +80,9 @@ export const CreateAlertModal: FC<ICreateAlertModal> = ({ onCloseFn }) => {
 
 	useEffect(() => {
 		validateForm();
-	}, [validateForm]);
+	}, [validateForm, position]);
 	return (
-		<Modal isOpen={true} onClose={onCloseFn}>
+		<Modal isOpen={true} onClose={onCloseFn} placement="center">
 			<ModalContent>
 				{(onClose) => (
 					<>
