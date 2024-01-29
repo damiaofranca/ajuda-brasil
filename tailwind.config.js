@@ -21,10 +21,10 @@ module.exports = {
 							DEFAULT: "#F2F2F2",
 						},
 						content2: {
-							DEFAULT: "#394240",
+							DEFAULT: "#FF9843",
 						},
 						content3: {
-							DEFAULT: "#365486",
+							DEFAULT: "#dadada",
 						},
 						content4: {
 							DEFAULT: "#0070f0",

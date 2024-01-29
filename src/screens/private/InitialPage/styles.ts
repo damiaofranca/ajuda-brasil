@@ -40,7 +40,11 @@ export const AddAlert = styled(Button)`
 	margin-left: 14px;
 `;
 
-export const ContainerMap = styled.div``;
+export const ContainerMap = styled.div`
+	@media screen and (max-width: 1080px) {
+		min-height: 600px;
+	}
+`;
 
 export const ContainerAlerts = styled.div`
 	padding: 20px 18px;

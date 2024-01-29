@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const TitleAlert = styled.h2`
-	color: #fff;
+	color: #454545;
 	font-size: 26px;
 	font-weight: 700;
 `;
@@ -37,10 +37,10 @@ export const ListItem = styled.div`
 	min-height: 90px;
 	padding: 4px 10px;
 	border-radius: 6px;
-	background-color: #fff;
 `;
 
 export const TitleList = styled.h4`
+	color: #fff;
 	font-size: 20px;
 	font-weight: 300;
 `;
@@ -56,6 +56,7 @@ export const ListContent = styled.div`
 `;
 
 export const ListDescription = styled.p`
+	color: #fff;
 	font-size: 13px;
 	font-weight: 300;
 	word-wrap: break-word;
@@ -63,7 +64,7 @@ export const ListDescription = styled.p`
 
 export const ListFooter = styled.div`
 	display: flex;
+	margin-bottom: 6px;
 	align-items: center;
 	justify-content: space-between;
-	margin-bottom: 6px;
 `;

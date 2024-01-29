@@ -1,5 +1,7 @@
-import React, { FC, useEffect, useState } from "react";
+/* eslint-disable array-callback-return */
+import { FC, useEffect, useState } from "react";
 import { Status, Wrapper } from "@googlemaps/react-wrapper";
+
 import { useFetchAlerts } from "../../hooks";
 import { contentInfoWindow } from "../../utils/contentInfoWindow";
 

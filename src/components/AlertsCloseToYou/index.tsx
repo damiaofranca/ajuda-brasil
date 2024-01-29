@@ -42,7 +42,7 @@ export const AlertsCloseToYou: FC<IAlertsCloseToYou> = ({ onSelectDetail }) => {
 			memo(() => (
 				<ListAlerts>
 					{matchSearch.map((alert) => (
-						<ListItem key={alert.lat}>
+						<ListItem key={alert.lat} className="bg-content2">
 							<ListHeader>
 								<TitleList>{alert.name}</TitleList>
 								{alert.madeBy === (user?.uid as string) ? (
@@ -62,7 +62,7 @@ export const AlertsCloseToYou: FC<IAlertsCloseToYou> = ({ onSelectDetail }) => {
 									<Chip size="sm" color="danger">
 										{alert.lat}
 									</Chip>
-									<Chip size="sm" color="warning" style={{ marginLeft: 4 }}>
+									<Chip size="sm" color="secondary" style={{ marginLeft: 4 }}>
 										{alert.lng}
 									</Chip>
 								</div>
