@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin     : 0;
+  padding    : 0;
+  box-sizing : border-box;
+  font-family: 'Open Sans', sans-serif;
+  transition : all 0.06s ease-in-out;
+}
+
+#map * {
+  -moz-transition   : none;
+  -webkit-transition: none;
+  transition        : none;
+  -o-transition     : all 0s ease;
+}
+
+.custom-info-window {
+  max-width : none;
+  width     : 260px;
+  min-height: 140px;
+}
+
+.custom-info-window>.title {
+  font-weight   : 600;
+  font-size     : 18px;
+  line-height   : 27px;
+  margin-bottom : 10px;
+  font-style    : normal;
+  color         : #4F4F4F;
+  text-transform: capitalize;
+  font-family   : "Open Sans";
+}
+
+
+.custom-info-window .wrapper-info .subtitle {
+  font-weight: 500;
+  font-size  : 16px;
+  line-height: 24px;
+  font-style : normal;
+  font-family: "Open Sans";
+  color      : #4F4F4F;
+}
+
+
+.custom-info-window .wrapper-info label {
+  font-weight: 400;
+  font-size  : 14px;
+  line-height: 21px;
+  font-style : normal;
+  font-family: "Open Sans";
+  color      : #828282;
+}
